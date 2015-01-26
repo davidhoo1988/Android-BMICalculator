@@ -1,5 +1,7 @@
 package hk.edu.cityu.bmi;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -42,6 +44,20 @@ public class MainActivity extends ActionBarActivity {
             startActivity(intent);
         }
     }
+    public void aboutBMI(View view) {
+        new AlertDialog.Builder(this)
+                                    .setTitle(R.string.about_button)
+                                    .setMessage(R.string.about_msg)
+                                    .setPositiveButton("OK",
+                                            new DialogInterface.OnClickListener(){
+                                                public void onClick(
+                                                        DialogInterface dialoginterface, int i){
+                                                }
+                                    })
+                .show();
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -49,4 +65,5 @@ public class MainActivity extends ActionBarActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
 }
